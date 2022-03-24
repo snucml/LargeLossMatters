@@ -18,8 +18,8 @@ python main.py --exp_name [expname] \
                --mod_scheme [scheme] \
                --delta_rel [delta_rel]
 ```
-where ```[data_path]``` $\in \{$'pascal', 'coco', 'nuswide', 'cub'$\}$, ```[scheme]``` $\in \{$'LL-R', 'LL-Ct', 'LL-Cp'$\}$, and 
-```[delta_rel]``` $\in \{0.1, 0.2, 0.3, 0.4, 0.5\}$.
+where ```[data_path]``` in {pascal, coco, nuswide, cub}, ```[scheme]``` in {LL-R, LL-Ct, LL-Cp}, and 
+```[delta_rel]``` in {0.1, 0.2, 0.3, 0.4, 0.5}.
 
 For other configuration (for example, learning rate, batch size), see ```config.py```.
 
