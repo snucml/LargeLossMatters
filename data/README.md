@@ -17,6 +17,7 @@ tar -xf pascal_raw.tar
 4. Clean up:
 ```
 rm pascal_raw.tar
+```
 
 ## COCO
 
@@ -40,6 +41,7 @@ unzip -q coco_val_raw.zip
 ```
 rm coco_train_raw.zip
 rm coco_val_raw.zip
+```
 
 ## NUSWIDE
 
@@ -88,6 +90,7 @@ tar -xf CUB_200_2011.tgz
 4. Clean up:
 ```
 rm CUB_200_2011.tgz
+```
 
 # Formatting the Data
 The `preproc` folder contains a few scripts which can be used to produce uniformly formatted image lists and labels:

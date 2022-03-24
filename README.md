@@ -10,5 +10,20 @@ Weakly supervised multi-label classification (WSML) task, which is to learn a mu
 ## Dataset Preparation
 See the `README.md` file in the `data` directory for instructions on downloading and setting up the datasets.
 
+## Model Training & Evaluation
+You can train and evaluate the models by
+```
+python main.py --exp_name [expname] \
+               --dataset [dataset] \
+               --mod_scheme [scheme] \
+               --delta_rel [delta_rel]
+```
+where ```[data_path]``` $\in \{$'pascal', 'coco', 'nuswide', 'cub'$\}$, ```[scheme]``` $\in \{$'LL-R', 'LL-Ct', 'LL-Cp'$\}$, and 
+```[delta_rel]``` $\in \{0.1, 0.2, 0.3, 0.4, 0.5\}$.
+
+For other configuration (for example, learning rate, batch size), see ```config.py```.
+
+Currently we only support ''End-to-end'' training setting.
+
 ## Acknowledgements
 Our code is heavily built upon [Multi-Label Learning from Single Positive Labels](https://github.com/elijahcole/single-positive-multi-label).
