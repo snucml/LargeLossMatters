@@ -8,7 +8,7 @@ Youngwook Kim<sup>1*</sup>, Jae Myung Kim<sup>2*</sup>, Zeynep Akata<sup>2,3,4</
 Primary contact : [ywkim@cml.snu.ac.kr](ywkim@cml.snu.ac.kr)
 
 <p align="center">
-<img src="imgs/teaser.png" width="70%" title="" alt=""></img>
+<img src="imgs/teaser.png" width="100%" title="" alt=""></img>
 </p>
 
 ## Abstract
@@ -34,11 +34,11 @@ Currently we only support ''End-to-end'' training setting.
 ## Quantitative Results
 Artificially generated partial label datasets      |  Real partial label dataset (OpenImages V3)
 :-------------------------:|:-------------------------:
-![](imgs/quant1.png){: width="30%"}  |  ![](imgs/quant2.png){: width="30%"}
+![](imgs/quant1.png)  |  ![](imgs/quant2.png)
 
 ## Qualitative Results
 <p align="center">
-<img src="imgs/quali1.png" width="70%" title="" alt=""></img>
+<img src="imgs/quali1.png" width="100%" title="" alt=""></img>
 </p>
 
 ## Acknowledgements
