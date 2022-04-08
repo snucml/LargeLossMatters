@@ -89,7 +89,7 @@ def get_configs():
     
     
     parser.add_argument('--save_path', type=str, default='./results')
-    parser.add_argument('--exp_name', type=str, default='blank')
+    parser.add_argument('--exp_name', type=str, default='exp_default')
     parser.add_argument('--dataset', type=str, default='coco',
                         choices=_DATASET)
     parser.add_argument('--num_workers', type=int, default=4)
