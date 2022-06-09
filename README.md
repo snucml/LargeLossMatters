@@ -1,4 +1,4 @@
-# Large Loss Matters in Weakly Supervised Multi-Label Classification (CVPR 2022) | Paper
+# Large Loss Matters in Weakly Supervised Multi-Label Classification (CVPR 2022) | [Paper](https://arxiv.org/abs/2206.03740)
 
 Youngwook Kim<sup>1*</sup>, Jae Myung Kim<sup>2*</sup>, Zeynep Akata<sup>2,3,4</sup>, and Jungwoo Lee<sup>1,5</sup>
 
@@ -40,6 +40,18 @@ Artificially generated partial label datasets      |  Real partial label dataset
 <p align="center">
 <img src="imgs/quali1.png" width="100%" title="" alt=""></img>
 </p>
+
+## How to cite
+```
+@InProceedings{Kim_2022_CVPR,
+    author    = {Kim, Youngwook and Kim, Jae Myung and Akata, Zeynep and Lee, Jungwoo},
+    title     = {Large Loss Matters in Weakly Supervised Multi-Label Classification},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {14156-14165}
+}
+```
 
 ## Acknowledgements
 Our code is heavily built upon [Multi-Label Learning from Single Positive Labels](https://github.com/elijahcole/single-positive-multi-label).
