@@ -50,13 +50,12 @@ def compute_batch_loss(preds, label_vec, P): # "preds" are actually logits (not 
         unobserved_loss = unobserved_mask.bool() * loss_matrix
         topk = torch.topk(unobserved_loss.flatten(), k)
         topk_lossvalue = topk.values[-1]
-        loss_mask = (unobserved_loss < topk_lossvalue).float() 
         correction_idx = torch.where(unobserved_loss > topk_lossvalue)
-        masked_loss_matrix = loss_matrix * loss_mask
         if P['mod_scheme'] in ['LL-Ct', 'LL-Cp']:
             final_loss_matrix = torch.where(unobserved_loss < topk_lossvalue, loss_matrix, corrected_loss_matrix)
         else:
-            final_loss_matrix = masked_loss_matrix
+            zero_loss_matrix = torch.zeros_like(loss_matrix)
+            final_loss_matrix = torch.where(unobserved_loss < topk_lossvalue, loss_matrix, zero_loss_matrix)
 
     main_loss = (final_loss_matrix / loss_denom_matrix).sum()
     
