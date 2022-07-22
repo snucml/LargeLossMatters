@@ -30,8 +30,6 @@ def compute_batch_loss(preds, label_vec, P): # "preds" are actually logits (not 
     batch_size = int(preds.size(0))
     num_classes = int(preds.size(1))
     
-    loss_denom_matrix = (num_classes * batch_size) * torch.ones_like(preds)
-
     unobserved_mask = (label_vec == 0)
     
     # compute loss for each image and class:
@@ -57,6 +55,6 @@ def compute_batch_loss(preds, label_vec, P): # "preds" are actually logits (not 
             zero_loss_matrix = torch.zeros_like(loss_matrix)
             final_loss_matrix = torch.where(unobserved_loss < topk_lossvalue, loss_matrix, zero_loss_matrix)
 
-    main_loss = (final_loss_matrix / loss_denom_matrix).sum()
+    main_loss = final_loss_matrix.mean()
     
     return main_loss, correction_idx
