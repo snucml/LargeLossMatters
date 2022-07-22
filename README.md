@@ -22,7 +22,9 @@ You can train and evaluate the models by
 ```
 python main.py --dataset [dataset] \
                --mod_scheme [scheme] \
-               --delta_rel [delta_rel]
+               --delta_rel [delta_rel] \
+               --lr [learning_rate] \
+               --bsize [batch_size]
 ```
 where ```[data_path]``` in {pascal, coco, nuswide, cub}, ```[scheme]``` in {LL-R, LL-Ct, LL-Cp}, and 
 ```[delta_rel]``` in {0.1, 0.2, 0.3, 0.4, 0.5}.

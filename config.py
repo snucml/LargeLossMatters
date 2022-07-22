@@ -45,21 +45,9 @@ def set_follow_up_configs(args):
     args.num_classes = _LOOKUP['num_classes'][args.dataset]
     args.save_path = set_dir(args.save_path, args.exp_name)
 
-    if args.mod_scheme == 'LL-R':
-        args.llr_rel = 1
-        args.llr_rel_mod = 0
-        args.perm_mod = 0
-    elif args.mod_scheme == 'LL-Ct':
-        args.llr_rel = 1
-        args.llr_rel_mod = 1
-        args.perm_mod = 0
-    elif args.mod_scheme == 'LL-Cp':
-        args.llr_rel = 1
-        args.llr_rel_mod = 1
-        args.perm_mod = 1
-    
     if args.delta_rel != 0:
         args.delta_rel /= 100
+    args.clean_rate = 1
 
     return args
 
@@ -67,6 +55,7 @@ def set_follow_up_configs(args):
 def get_configs():
     parser = argparse.ArgumentParser()
 
+    # Default settings
     parser.add_argument('--ss_seed', type=int, default=999,
                         help='seed fo subsampling')
     parser.add_argument('--ss_frac_train', type=float, default=1.0,
@@ -86,23 +75,27 @@ def get_configs():
                         const=True, default=False)
     parser.add_argument('--use_pretrained', type=str2bool, nargs='?',
                         const=True, default=True)
+    parser.add_argument('--num_epochs', type=int, default=10)
     
-    
+    # Util
     parser.add_argument('--save_path', type=str, default='./results')
     parser.add_argument('--exp_name', type=str, default='exp_default')
-    parser.add_argument('--dataset', type=str, default='coco',
-                        choices=_DATASET)
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--gpu_num', type=str, default='0')
-    parser.add_argument('--num_epochs', type=int, default=10)
+    
+    # Data
+    parser.add_argument('--dataset', type=str, required=True,
+                        choices=_DATASET)
+
+    # Hyperparameters
     parser.add_argument('--optimizer', type=str, default='adam',
                         choices=_OPTIMIZER)
     parser.add_argument('--bsize', type=int, default=16)
     parser.add_argument('--lr', type=float, default=1e-5)
     parser.add_argument('--lr_mult', type=float, default=10)
-    parser.add_argument('--mod_scheme', type=str, default='LL-R', 
+    parser.add_argument('--mod_scheme', type=str, required=True, 
                         choices=_SCHEMES)
-    parser.add_argument('--delta_rel', type=float, default=0)
+    parser.add_argument('--delta_rel', type=float, required=True)
     
     args = parser.parse_args()
     args = set_follow_up_configs(args)

@@ -79,9 +79,8 @@ def run_train(P):
                         loss_tensor.backward()
                         optimizer.step()
 
-                        if correction_idx is not None:
-                            if P['perm_mod']: # permanent correction
-                                dataset[phase].label_matrix_obs[idx[correction_idx[0].cpu()], correction_idx[1].cpu()] = 1.0
+                        if P['mod_scheme'] is 'LL-Cp' and correction_idx is not None:
+                            dataset[phase].label_matrix_obs[idx[correction_idx[0].cpu()], correction_idx[1].cpu()] = 1.0
 
                     else:
                         preds_np = preds.cpu().numpy()
@@ -90,13 +89,13 @@ def run_train(P):
                         y_true[batch_stack : batch_stack+this_batch_size] = label_vec_true
                         batch_stack += this_batch_size
 
-            if phase != 'train':
-                metrics = compute_metrics(y_pred, y_true)
-                del y_pred
-                del y_true
-                map_val = metrics['map']
+        if phase != 'train':
+            metrics = compute_metrics(y_pred, y_true)
+            del y_pred
+            del y_true
+            map_val = metrics['map']
                 
-        P['llr_rel'] -= P['delta_rel']
+        P['clean_rate'] -= P['delta_rel']
                 
         print(f"Epoch {epoch} : val mAP {map_val:.3f}")
         if bestmap_val < map_val:
