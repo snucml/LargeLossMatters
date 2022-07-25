@@ -17,6 +17,8 @@ Weakly supervised multi-label classification (WSML) task, which is to learn a mu
 ## Dataset Preparation
 See the `README.md` file in the `data` directory for instructions on downloading and setting up the datasets.
 
+(NEW) We added an instruction for downloading metadata and images for the OpenImages V3 dataset. Please check it.
+
 ## Model Training & Evaluation
 You can train and evaluate the models by
 ```

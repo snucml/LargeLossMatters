@@ -7,3 +7,5 @@ scikit_learn==0.24.2
 tqdm
 munch
 pyyaml
+awscli
+boto3
