@@ -116,28 +116,19 @@ rm images_2017_11.tar.gz
 rm annotations_human_2017_11.tar.gz
 rm classes_2017_11.tar.gz
 ```
-5. Download val/test images and subset of training images (refer [here](https://github.com/cvdfoundation/open-images-dataset#download-images-with-bounding-boxes-annotations)):
-
-
-Basically, this dataset only provides image URLs rather than image files. However, some of its URLs are currently inaccessible. So we first download images from the CVDF AWS S3 cloud storage bucket which is fully accessible. 
-
-Note that these are images that have bounding boxes annotations in OpenImages V4/V5. While val/test set is identical to our task (classification in OpenImages V3), they do not span the entire train set in our task.
+5. Download training images (using tool slightly modified from [here](https://github.com/openimages/dataset/blob/main/downloader.py)):
 ```
 mkdir images_train
+python generate_imageid_list.py
+python downloader.py imageid_list_train_v3.txt --download_folder images_train
+```
+
+6. Download val/test images (refer [here](https://github.com/cvdfoundation/open-images-dataset#download-images-with-bounding-boxes-annotations)):
+```
 mkdir images_val
 mkdir images_test
-aws s3 --no-sign-request sync s3://open-images-dataset/train images_train
 aws s3 --no-sign-request sync s3://open-images-dataset/validation images_val
 aws s3 --no-sign-request sync s3://open-images-dataset/test images_test
-```
-
-6. Download rest of training images via its URL:
-
-(using tool slightly modified from [here](https://github.com/openimages/dataset/blob/main/downloader.py)).
-
-```
-python generate_imageid_list.py --download_folder images_train
-python downloader.py imageid_list_train_v3.txt --download_folder images_train
 ```
 
 # Formatting the Data
