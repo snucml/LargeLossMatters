@@ -75,8 +75,8 @@ def run_train(P):
                     preds = torch.sigmoid(logits)
                     
                     if phase == 'train':
-                        loss_tensor, correction_idx = losses.compute_batch_loss(logits, label_vec_obs, P)
-                        loss_tensor.backward()
+                        loss, correction_idx = losses.compute_batch_loss(logits, label_vec_obs, P)
+                        loss.backward()
                         optimizer.step()
 
                         if P['mod_scheme'] is 'LL-Cp' and correction_idx is not None:
@@ -89,11 +89,10 @@ def run_train(P):
                         y_true[batch_stack : batch_stack+this_batch_size] = label_vec_true
                         batch_stack += this_batch_size
 
-        if phase != 'train':
-            metrics = compute_metrics(y_pred, y_true)
-            del y_pred
-            del y_true
-            map_val = metrics['map']
+        metrics = compute_metrics(y_pred, y_true)
+        del y_pred
+        del y_true
+        map_val = metrics['map']
                 
         P['clean_rate'] -= P['delta_rel']
                 
