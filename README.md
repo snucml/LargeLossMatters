@@ -26,8 +26,7 @@ python main.py --dataset [dataset] \
                --mod_scheme [scheme] \
                --delta_rel [delta_rel] \
                --lr [learning_rate] \
-               --bsize [batch_size] \
-               --num_epochs [num_epochs]
+               --optimizer [optimizer]
 ```
 where ```[data_path]``` in {pascal, coco, nuswide, cub}, ```[scheme]``` in {LL-R, LL-Ct, LL-Cp}, and 
 ```[delta_rel]``` in {0.1, 0.2, 0.3, 0.4, 0.5}.
@@ -45,6 +44,7 @@ Artificially generated partial label datasets      |  Real partial label dataset
 </p>
 
 ## How to cite
+If our work is helpful, please consider citing our paper.
 ```
 @InProceedings{Kim_2022_CVPR,
     author    = {Kim, Youngwook and Kim, Jae Myung and Akata, Zeynep and Lee, Jungwoo},
