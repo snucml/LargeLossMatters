@@ -1,5 +1,7 @@
 # Large Loss Matters in Weakly Supervised Multi-Label Classification (CVPR 2022) | [Paper](https://arxiv.org/abs/2206.03740)
 
+[Project page](https://openaccess.thecvf.com/content/CVPR2022/html/Kim_Large_Loss_Matters_in_Weakly_Supervised_Multi-Label_Classification_CVPR_2022_paper.html) | [Poster](https://youngwk.github.io/data/LargeLossMatters%20Poster_CVPR.pdf) | [Slide](https://youngwk.github.io/data/LargeLossMatters%20presentation.pdf)
+
 Youngwook Kim<sup>1*</sup>, Jae Myung Kim<sup>2*</sup>, Zeynep Akata<sup>2,3,4</sup>, and Jungwoo Lee<sup>1,5</sup>
 
 <sup>1</sup> <sub>Seoul National Univeristy</sub>  <sup>2</sup> <sub>University of T&uuml;bingen</sub> 
