@@ -7,7 +7,7 @@ Youngwook Kim<sup>1*</sup>, Jae Myung Kim<sup>2*</sup>, Zeynep Akata<sup>2,3,4</
 <sup>1</sup> <sub>Seoul National Univeristy</sub>  <sup>2</sup> <sub>University of T&uuml;bingen</sub> 
 <sup>3</sup> <sub>Max Planck Institute for Intelligent Systems</sub>  <sup>4</sup> <sub>Max Planck Institute for Informatics</sub> <sup>5</sup> <sub>HodooAI Lab</sub>
 
-Primary contact : [ywkim@cml.snu.ac.kr](ywkim@cml.snu.ac.kr)
+Primary contact : [ywkim@cml.snu.ac.kr](ywkim@cml.snu.ac.kr) ([Homepage](https://youngwk.github.io))
 
 <p align="center">
 <img src="imgs/teaser.png" width="100%" title="" alt=""></img>
